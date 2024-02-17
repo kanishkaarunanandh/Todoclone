@@ -1,0 +1,48 @@
+<style>
+    *{
+        background-color:  #b397d6;
+       text-align: center;
+      
+    }
+    input{
+        background-color: white;
+       
+       
+    }
+    
+    li{
+        color: black;
+       
+    }
+    button{
+        background-color: white;
+    }
+    h1{
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+</style>
+<h1>TO DO LIST ✎</h1>
+<input id="input">
+<button onclick="add()">✓</button>
+<ul id="list-container" style="list-style-type: none;">
+    <li>ENTER YOU WORK
+        <button onclick="deleteItem(event)" >✘</button>
+    </li>
+</ul>
+<script>
+    //selecting ul
+    var ul=document.getElementById("list-container")
+    var input = document.getElementById("input")
+    function add()
+    {
+        var listitem = document.createElement("li")
+        listitem.innerHTML=input.value + "<button onclick='deleteItem(event)'>✘</button>"
+        ul.append(listitem)
+    }
+    function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
